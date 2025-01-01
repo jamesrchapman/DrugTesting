@@ -1,9 +1,7 @@
 # Certainly! Here is some example code that demonstrates how to use OpenMM to simulate the binding of a small molecule to a collection of proteins:
 
 # ```python
-import simtk.openmm as mm
-from simtk.openmm import app
-from simtk.unit import *
+from openmm.app import *
 import numpy as np
 
 # Load the protein and ligand structures
@@ -90,8 +88,8 @@ wham = multistate.WHAM(state_data['potentialEnergy'], simulation.thermodynamic_s
 # Compute the binding free energy
 binding_free_energy, error = wham.get_free_energy()
 print('Binding free energy: %f +/- %f kcal/mol' % (binding_free_energy / kilocalories_per_mole, error / kilocalories_per_mole))
-```
+# ```
 
-This code sets up a simulation of a protein-ligand complex and uses a collective variable force to detect the binding of the ligand to the protein. The simulation is run for a fixed number of steps, and the results are then analyzed using the weighted histogram analysis method (WHAM) to compute the binding free energy.
+# This code sets up a simulation of a protein-ligand complex and uses a collective variable force to detect the binding of the ligand to the protein. The simulation is run for a fixed number of steps, and the results are then analyzed using the weighted histogram analysis method (WHAM) to compute the binding free energy.
 
-Note that this is just an example and would need to be adapted to your specific use case, but it should provide a starting point for working with OpenMM.
+# Note that this is just an example and would need to be adapted to your specific use case, but it should provide a starting point for working with OpenMM.
